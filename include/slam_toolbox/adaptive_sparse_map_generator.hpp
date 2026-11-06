@@ -77,7 +77,7 @@ private:
   rclcpp_lifecycle::LifecycleNode::SharedPtr node_{nullptr};
   std::unique_ptr<slam_toolbox::adaptive::SparseGrid2D<16>> sparse_grid_{nullptr};
 
-  double raytrace_range_cap_{5.0};
+  double raytrace_range_cap_{16.0};
   bool occlusion_stop_{true};
   uint32_t min_reinforcement_hits_{2};
   double decay_expiry_sec_{8.0};

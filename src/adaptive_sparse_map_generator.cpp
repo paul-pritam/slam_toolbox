@@ -27,7 +27,7 @@ namespace map_generator_plugins
 {
 
 AdaptiveSparseMapGenerator::AdaptiveSparseMapGenerator()
-: raytrace_range_cap_(5.0),
+: raytrace_range_cap_(16.0),
   occlusion_stop_(true),
   min_reinforcement_hits_(2),
   decay_expiry_sec_(8.0),
