@@ -1,0 +1,17 @@
+<library path="dense_karto_map_generator_plugin">
+  <class 
+    name="map_generator_plugins::DenseKartoMapGenerator" 
+    type="map_generator_plugins::DenseKartoMapGenerator" 
+    base_class_type="slam_toolbox::MapGenerator">
+    <description>Default monolithic 9-byte/cell Karto dense occupancy grid generator for SLAM Toolbox</description>
+  </class>
+</library>
+
+<library path="adaptive_sparse_map_generator_plugin">
+  <class 
+    name="map_generator_plugins::AdaptiveSparseMapGenerator" 
+    type="map_generator_plugins::AdaptiveSparseMapGenerator" 
+    base_class_type="slam_toolbox::MapGenerator">
+    <description>High-performance adaptive block-sparse 2D map generator with 85% memory compression and ray occlusion stopping</description>
+  </class>
+</library>

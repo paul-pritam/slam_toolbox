@@ -52,6 +52,7 @@
 #include "slam_toolbox/laser_utils.hpp"
 #include "slam_toolbox/get_pose_helper.hpp"
 #include "slam_toolbox/map_saver.hpp"
+#include "slam_toolbox/map_generator.hpp"
 #include "slam_toolbox/loop_closure_assistant.hpp"
 
 namespace slam_toolbox
@@ -88,6 +89,7 @@ protected:
   // setup
   void setParams();
   void setSolver();
+  void setMapGenerator();
   void setROSInterfaces();
 
   // callbacks
@@ -202,6 +204,8 @@ protected:
   // pluginlib
   pluginlib::ClassLoader<karto::ScanSolver> solver_loader_;
   std::shared_ptr<karto::ScanSolver> solver_;
+  pluginlib::ClassLoader<slam_toolbox::MapGenerator> map_generator_loader_;
+  std::shared_ptr<slam_toolbox::MapGenerator> map_generator_;
 
   // Connection to tell that server is still up
   std::unique_ptr<bond::Bond> bond_{nullptr};

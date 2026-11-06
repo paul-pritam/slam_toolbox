@@ -91,6 +91,7 @@
   <export>
     <build_type>ament_cmake</build_type>
     <slam_toolbox plugin="${prefix}/solver_plugins.xml" />
+    <slam_toolbox plugin="${prefix}/map_generator_plugins.xml" />
     <rviz_common plugin="${prefix}/rviz_plugins.xml"/>
   </export>
 

@@ -37,6 +37,7 @@ SlamToolbox::SlamToolbox()
 SlamToolbox::SlamToolbox(rclcpp::NodeOptions options)
 : rclcpp_lifecycle::LifecycleNode("slam_toolbox", "", options),
   solver_loader_("slam_toolbox", "karto::ScanSolver"),
+  map_generator_loader_("slam_toolbox", "slam_toolbox::MapGenerator"),
   processor_type_(PROCESS),
   first_measurement_(true),
   process_near_pose_(nullptr),
@@ -111,6 +112,7 @@ CallbackReturn SlamToolbox::on_configure(const rclcpp_lifecycle::State &)
 
   setParams();
   setSolver();
+  setMapGenerator();
 
   double tmp_val = 30.0;
   if (!this->has_parameter("tf_buffer_duration")) {
@@ -221,6 +223,7 @@ CallbackReturn SlamToolbox::on_cleanup(const rclcpp_lifecycle::State &)
   laser_assistant_.reset();
   scan_holder_.reset();
   solver_.reset();
+  map_generator_.reset();
 
   tfB_.reset();
   tfL_.reset();
@@ -258,6 +261,7 @@ SlamToolbox::~SlamToolbox()
   laser_assistant_.reset();
   scan_holder_.reset();
   solver_.reset();
+  map_generator_.reset();
 
   scan_filter_.reset();
   scan_filter_sub_.reset();
@@ -299,6 +303,28 @@ void SlamToolbox::setSolver()
     exit(1);
   }
   smapper_->getMapper()->SetScanSolver(solver_.get());
+}
+
+/*****************************************************************************/
+void SlamToolbox::setMapGenerator()
+/*****************************************************************************/
+{
+  std::string map_generator_plugin = std::string("map_generator_plugins::DenseKartoMapGenerator");
+  if (!this->has_parameter("map_generator_plugin")) {
+    this->declare_parameter("map_generator_plugin", map_generator_plugin);
+  }
+  map_generator_plugin = this->get_parameter("map_generator_plugin").as_string();
+
+  try {
+    map_generator_ = map_generator_loader_.createSharedInstance(map_generator_plugin);
+    RCLCPP_INFO(get_logger(), "Using map generator plugin %s",
+      map_generator_plugin.c_str());
+    map_generator_->configure(shared_from_this());
+  } catch (const pluginlib::PluginlibException & ex) {
+    RCLCPP_FATAL(get_logger(), "Failed to create map generator %s, is it "
+      "registered and built? Exception: %s.", map_generator_plugin.c_str(), ex.what());
+    exit(1);
+  }
 }
 
 /*****************************************************************************/
@@ -653,22 +679,33 @@ bool SlamToolbox::updateMap()
     return true;
   }
   boost::mutex::scoped_lock lock(smapper_mutex_);
-  OccupancyGrid * occ_grid = smapper_->getOccupancyGrid(resolution_);
-  if (!occ_grid) {
-    return false;
-  }
 
-  vis_utils::toNavMap(occ_grid, map_.map);
+  if (map_generator_) {
+    if (!map_generator_->generateMap(
+        smapper_->getMapper()->GetAllProcessedScans(),
+        resolution_,
+        map_.map))
+    {
+      return false;
+    }
+  } else {
+    OccupancyGrid * occ_grid = smapper_->getOccupancyGrid(resolution_);
+    if (!occ_grid) {
+      return false;
+    }
+    vis_utils::toNavMap(occ_grid, map_.map);
+    delete occ_grid;
+    occ_grid = nullptr;
+  }
 
   // publish map as current
   map_.map.header.stamp = scan_header.stamp;
+  map_.map.header.frame_id = map_frame_;
   sst_->publish(
     std::move(std::make_unique<nav_msgs::msg::OccupancyGrid>(map_.map)));
   sstm_->publish(
     std::move(std::make_unique<nav_msgs::msg::MapMetaData>(map_.map.info)));
 
-  delete occ_grid;
-  occ_grid = nullptr;
   return true;
 }
 

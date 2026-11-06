@@ -74,6 +74,8 @@ set(libraries
     toolbox_common
     SlamToolboxPlugin
     ceres_solver_plugin
+    dense_karto_map_generator_plugin
+    adaptive_sparse_map_generator_plugin
     async_slam_toolbox
     sync_slam_toolbox
     localization_slam_toolbox
@@ -147,6 +149,18 @@ rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typ
 target_link_libraries(ceres_solver_plugin "${cpp_typesupport_target}")
 pluginlib_export_plugin_description_file(slam_toolbox solver_plugins.xml)
 
+#### Map Generator Plugins
+add_library(dense_karto_map_generator_plugin src/dense_karto_map_generator.cpp)
+ament_target_dependencies(dense_karto_map_generator_plugin ${dependencies})
+target_link_libraries(dense_karto_map_generator_plugin kartoSlamToolbox ${Boost_LIBRARIES})
+target_link_libraries(dense_karto_map_generator_plugin "${cpp_typesupport_target}")
+
+add_library(adaptive_sparse_map_generator_plugin src/adaptive_sparse_map_generator.cpp)
+ament_target_dependencies(adaptive_sparse_map_generator_plugin ${dependencies})
+target_link_libraries(adaptive_sparse_map_generator_plugin kartoSlamToolbox ${Boost_LIBRARIES})
+target_link_libraries(adaptive_sparse_map_generator_plugin "${cpp_typesupport_target}")
+pluginlib_export_plugin_description_file(slam_toolbox map_generator_plugins.xml)
+
 #### Tool lib for mapping
 add_library(toolbox_common src/slam_toolbox_common.cpp src/map_saver.cpp src/loop_closure_assistant.cpp src/laser_utils.cpp src/slam_mapper.cpp)
 ament_target_dependencies(toolbox_common
@@ -185,6 +199,17 @@ target_link_libraries(map_and_localization_slam_toolbox_node map_and_localizatio
 #### Merging maps tool
 add_executable(merge_maps_kinematic src/merge_maps_kinematic.cpp)
 target_link_libraries(merge_maps_kinematic kartoSlamToolbox toolbox_common)
+
+#### Benchmark Map Generators
+add_executable(benchmark_map_generators test/benchmark_map_generators.cpp)
+ament_target_dependencies(benchmark_map_generators ${dependencies})
+target_link_libraries(benchmark_map_generators
+  dense_karto_map_generator_plugin
+  adaptive_sparse_map_generator_plugin
+  kartoSlamToolbox
+  ${Boost_LIBRARIES}
+  "${cpp_typesupport_target}"
+)
 
 #### testing
 #if(BUILD_TESTING)
@@ -237,7 +262,7 @@ install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}
 )
 
-install(FILES solver_plugins.xml rviz_plugins.xml
+install(FILES solver_plugins.xml rviz_plugins.xml map_generator_plugins.xml
   DESTINATION share
 )
 
