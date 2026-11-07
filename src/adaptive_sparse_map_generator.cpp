@@ -28,11 +28,29 @@ namespace map_generator_plugins
 
 AdaptiveSparseMapGenerator::AdaptiveSparseMapGenerator()
 : raytrace_range_cap_(16.0),
-  occlusion_stop_(true),
+  occlusion_stop_(false),
   min_reinforcement_hits_(2),
   decay_expiry_sec_(8.0),
-  resolution_(0.05)
+  resolution_(0.05),
+  min_pass_through_(2),
+  occupancy_threshold_(0.1)
 {
+}
+
+void AdaptiveSparseMapGenerator::setMinPassThrough(int val)
+{
+  min_pass_through_ = std::max(0, val);
+  if (sparse_grid_) {
+    sparse_grid_->set_min_pass_through(static_cast<uint32_t>(min_pass_through_));
+  }
+}
+
+void AdaptiveSparseMapGenerator::setOccupancyThreshold(double val)
+{
+  occupancy_threshold_ = std::max(0.01, std::min(0.99, val));
+  if (sparse_grid_) {
+    sparse_grid_->set_occupancy_threshold(occupancy_threshold_);
+  }
 }
 
 void AdaptiveSparseMapGenerator::configure(rclcpp_lifecycle::LifecycleNode::SharedPtr node)
@@ -47,10 +65,17 @@ void AdaptiveSparseMapGenerator::configure(rclcpp_lifecycle::LifecycleNode::Shar
   }
   node_->get_parameter("map_generator.raytrace_range_cap", raytrace_range_cap_);
 
+  // Deprecated occlusion_stop parameter handling
   if (!node_->has_parameter("map_generator.occlusion_stop")) {
     node_->declare_parameter("map_generator.occlusion_stop", occlusion_stop_);
   }
   node_->get_parameter("map_generator.occlusion_stop", occlusion_stop_);
+  if (occlusion_stop_) {
+    RCLCPP_WARN(
+      node_->get_logger(),
+      "Parameter 'map_generator.occlusion_stop' is deprecated and ignored; "
+      "probabilistic ray traversal is full-length matching Karto SDK logic.");
+  }
 
   if (!node_->has_parameter("map_generator.min_reinforcement_hits")) {
     node_->declare_parameter(
@@ -66,10 +91,57 @@ void AdaptiveSparseMapGenerator::configure(rclcpp_lifecycle::LifecycleNode::Shar
   }
   node_->get_parameter("map_generator.decay_expiry_sec", decay_expiry_sec_);
 
+  // --- Parameter 1: min_pass_through (default: 2) ---
+  if (!node_->has_parameter("min_pass_through")) {
+    node_->declare_parameter("min_pass_through", min_pass_through_);
+  }
+  node_->get_parameter("min_pass_through", min_pass_through_);
+
+  if (node_->has_parameter("map_generator.min_pass_through")) {
+    node_->get_parameter("map_generator.min_pass_through", min_pass_through_);
+  } else {
+    node_->declare_parameter("map_generator.min_pass_through", min_pass_through_);
+  }
+
+  if (min_pass_through_ < 0) {
+    RCLCPP_WARN(
+      node_->get_logger(),
+      "Parameter min_pass_through (%d) cannot be negative; clamping to 0",
+      min_pass_through_);
+    min_pass_through_ = 0;
+  }
+
+  // --- Parameter 2: occupancy_threshold (default: 0.1) ---
+  if (!node_->has_parameter("occupancy_threshold")) {
+    node_->declare_parameter("occupancy_threshold", occupancy_threshold_);
+  }
+  node_->get_parameter("occupancy_threshold", occupancy_threshold_);
+
+  if (node_->has_parameter("map_generator.occupancy_threshold")) {
+    node_->get_parameter("map_generator.occupancy_threshold", occupancy_threshold_);
+  } else {
+    node_->declare_parameter("map_generator.occupancy_threshold", occupancy_threshold_);
+  }
+
+  if (occupancy_threshold_ <= 0.0 || occupancy_threshold_ >= 1.0) {
+    RCLCPP_WARN(
+      node_->get_logger(),
+      "Parameter occupancy_threshold (%.3f) must be in range (0.0, 1.0); "
+      "clamping to [0.01, 0.99]",
+      occupancy_threshold_);
+    occupancy_threshold_ = std::max(0.01, std::min(0.99, occupancy_threshold_));
+  }
+
+  if (sparse_grid_) {
+    sparse_grid_->set_min_pass_through(static_cast<uint32_t>(min_pass_through_));
+    sparse_grid_->set_occupancy_threshold(occupancy_threshold_);
+  }
+
   RCLCPP_INFO(
     node_->get_logger(),
-    "Configured AdaptiveSparseMapGenerator (cap: %.1fm, occlusion_stop: %s, hits: %u)",
-    raytrace_range_cap_, occlusion_stop_ ? "true" : "false", min_reinforcement_hits_);
+    "Configured AdaptiveSparseMapGenerator (cap: %.1fm, min_pass_through: %d, "
+    "occupancy_threshold: %.2f)",
+    raytrace_range_cap_, min_pass_through_, occupancy_threshold_);
 }
 
 bool AdaptiveSparseMapGenerator::generateMap(
@@ -86,9 +158,13 @@ bool AdaptiveSparseMapGenerator::generateMap(
   // Initialize or re-create sparse grid if resolution changed
   if (!sparse_grid_ || std::abs(sparse_grid_->resolution() - resolution) > 1e-6) {
     sparse_grid_ = std::make_unique<slam_toolbox::adaptive::SparseGrid2D<16>>(
-      resolution, 0.0, 0.0, 255);
+      resolution, 0.0, 0.0, 255,
+      static_cast<uint32_t>(min_pass_through_),
+      occupancy_threshold_);
   } else {
     sparse_grid_->clear();
+    sparse_grid_->set_min_pass_through(static_cast<uint32_t>(min_pass_through_));
+    sparse_grid_->set_occupancy_threshold(occupancy_threshold_);
   }
 
   for (karto::LocalizedRangeScan * localized_scan : scans) {
@@ -143,9 +219,10 @@ bool AdaptiveSparseMapGenerator::generateMap(
         ray_endpoint.GetX(), ray_endpoint.GetY(),
         endpoint_cell_x, endpoint_cell_y);
 
-      // Raytrace free cells along the line with wall occlusion termination:
-      // If the ray encounters an already-confirmed lethal obstacle cell (cost 254),
-      // we terminate ray traversal to prevent punch-through and wall erosion.
+      // Probabilistic ray traversal matching Karto SDK logic:
+      // Trace line from sensor to endpoint, recording pass-through for every cell.
+      // Ray occlusion stopping is eliminated so beams traverse their full length,
+      // allowing dynamic obstacles to clear via pass-through dilution.
       sparse_grid_->raytrace(
         sensor_cell_x, sensor_cell_y,
         endpoint_cell_x, endpoint_cell_y,
@@ -155,20 +232,20 @@ bool AdaptiveSparseMapGenerator::generateMap(
           if (traversed_cell_x == endpoint_cell_x && traversed_cell_y == endpoint_cell_y) {
             return false;
           }
-          if (this->occlusion_stop_ &&
-          this->sparse_grid_->get_cost(traversed_cell_x, traversed_cell_y) == 254)
-          {
-            return false;  // Occlusion: Stop ray at confirmed wall
-          }
-          this->sparse_grid_->set_cost(traversed_cell_x, traversed_cell_y, 0, 0.0);
+          this->sparse_grid_->record_pass(traversed_cell_x, traversed_cell_y);
           return true;
         });
 
       if (is_endpoint_valid) {
-        sparse_grid_->set_cost(endpoint_cell_x, endpoint_cell_y, 254, 0.0);
+        sparse_grid_->record_hit(endpoint_cell_x, endpoint_cell_y);
+      } else {
+        sparse_grid_->record_pass(endpoint_cell_x, endpoint_cell_y);
       }
     }
   }
+
+  // Synchronize probabilistic occupancy across all modified blocks
+  sparse_grid_->update_all_occupancy();
 
   // Populate output OccupancyGrid message
   sparse_grid_->to_occupancy_grid(out_map, "map", builtin_interfaces::msg::Time());

@@ -1,0 +1,590 @@
+[0.000000] (-) TimerEvent: {}
+[0.000497] (slam_toolbox) JobQueued: {'identifier': 'slam_toolbox', 'dependencies': OrderedDict()}
+[0.000596] (slam_toolbox) JobStarted: {'identifier': 'slam_toolbox'}
+[0.009601] (slam_toolbox) JobProgress: {'identifier': 'slam_toolbox', 'progress': 'cmake'}
+[0.010606] (slam_toolbox) JobProgress: {'identifier': 'slam_toolbox', 'progress': 'build'}
+[0.011208] (slam_toolbox) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox', '--', '-j16', '-l16'], 'cwd': '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib/rmf_robot_sim_gz_plugins/:/opt/ros/jazzy/lib/rmf_building_sim_gz_plugins/', 'JJ_PAGER': 'cat', 'LINOROBOT2_BASE': '2wd', 'GZ_GUI_PLUGIN_PATH': '/opt/ros/jazzy/lib/rmf_robot_sim_gz_plugins/:/opt/ros/jazzy/lib/rmf_building_sim_gz_plugins/', 'GTK_ICON_THEME': 'Flat-Remix-Blue-Dark', 'HYPRCURSOR_THEME': 'Bibata-Modern-Ice', 'QT_SCALE_FACTOR': '1', 'HYPRLAND_CMD': 'Hyprland --watchdog-fd 4', 'USER': 'pritam', 'HYPRLAND_INSTANCE_SIGNATURE': 'efb50993780079460b0cbed1363e2166a2de1d9f_1793957849_1930955956', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"b64b205f-4d57-4eb8-8972-2cbad3c4a4c4", "stepIndex":13421, "toolCall":{"id":"call_609544427770459954", "name":"run_command", "argumentsJson":"{\\"CommandLine\\":\\"cd /home/pritam/slam/slam_toolbox_upstream \\\\u0026\\\\u0026 colcon build --symlink-install --packages-select slam_toolbox\\\\ncd /home/pritam/bcr_ws \\\\u0026\\\\u0026 colcon build --symlink-install --packages-select adaptive_costmap_2d\\",\\"WaitMsBeforeAsync\\":10000,\\"toolSummary\\":\\"Rebuild slam_toolbox and adaptive_costmap_2d\\"}"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'STARSHIP_SHELL': 'zsh', 'GIT_EDITOR': 'false', 'XDG_SESSION_TYPE': 'wayland', 'BUN_INSTALL': '/home/pritam/.bun', '__GLX_VENDOR_LIBRARY_NAME': 'mesa', 'ANTIGRAVITY_AGENTAPI_EXE': '/home/pritam/.local/bin/agy', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com/lib:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs/lib:/home/pritam/bcr_ws/install/hybrid_astar_planner/lib:/opt/ros/jazzy/opt/zenoh_cpp_vendor/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'LESS': '-R', 'HOME': '/home/pritam', 'TERMINFO': '/home/pritam/.local/lib/kitty/terminfo', 'MOZ_ENABLE_WAYLAND': '1', 'OLDPWD': '/home/pritam/slam', 'DESKTOP_SESSION': 'hyprland', 'NVM_BIN': '/home/pritam/.nvm/versions/node/v24.11.0/bin', 'KITTY_INSTALLATION_DIR': '/home/pritam/.local/lib/kitty', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'NVM_INC': '/home/pritam/.nvm/versions/node/v24.11.0/include/node', 'ZSH': '/home/pritam/.oh-my-zsh', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'FNM_ARCH': 'x64', 'KITTY_PID': '4767', 'JJ_EDITOR': 'false', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'GDK_SCALE': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'QT_WAYLAND_DISABLE_WINDOWDECORATION': '1', 'ANTIGRAVITY_AGENT': '1', 'NVM_DIR': '/home/pritam/.nvm', 'QT_QPA_PLATFORMTHEME': 'qt6ct', 'WAYLAND_DISPLAY': 'wayland-1', 'COLCON_PREFIX_PATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install:/home/pritam/bcr_ws/install:/home/pritam/Desktop/ros_ws/install:/home/pritam/fleet_commander/install', 'FNM_VERSION_FILE_STRATEGY': 'local', 'ROS_DISTRO': 'jazzy', 'FNM_LOGLEVEL': 'info', 'LOGNAME': 'pritam', 'FNM_NODE_DIST_MIRROR': 'https://nodejs.org/dist', 'QT_AUTO_SCREEN_SCALE_FACTOR': '1', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'SNACKS_KITTY': 'true', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'wayland', 'KITTY_PUBLIC_KEY': '1:<0*)|+PZsUH6V_)U7t`P`ANJ{Pm(L2MH&7zT4o<e', 'USERNAME': 'pritam', 'TERM': 'dumb', 'XDG_SESSION_ID': '2', 'DOTS_VERSION': '2.3.20', 'ANTIGRAVITY_APP_DATA_DIR': '/home/pritam/.gemini/antigravity-cli', 'ANTIGRAVITY_LS_VERSION': 'cli-1.5.2', 'PATH': '/home/pritam/.gemini/antigravity-cli/bin:/home/pritam/.local/bin:/home/pritam/.local/share/../bin:/home/pritam/.opencode/bin:/home/pritam/.bun/bin:/run/user/1000/fnm_multishells/5291_1793957867669/bin:/home/pritam/.local/share/fnm:/home/pritam/.nvm/versions/node/v24.11.0/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/pritam/.cargo/bin:/home/pritam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/pritam/Groot2/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland,x11,*', 'DISPLAY': ':0', 'HYPRCURSOR_SIZE': '24', 'LD_PRELOAD': '/usr/lib/x86_64-linux-gnu/libpthread.so.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Hyprland', 'ANTIGRAVITY_CONVERSATION_ID': 'b64b205f-4d57-4eb8-8972-2cbad3c4a4c4', 'GZ_IP': '127.0.0.1', 'ZENOH_SESSION_CONFIG_URI': '/home/pritam/zenoh_session_config.json5', 'RMW_IMPLEMENTATION': 'rmw_zenoh_cpp', 'XDG_DATA_HOME': '/home/pritam/.local/share', 'LIBVA_DRIVER_NAME': 'nvidia', 'XDG_SESSION_DESKTOP': 'Hyprland', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'FNM_DIR': '/home/pritam/.local/share/fnm', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/home/pritam/Desktop/ros_ws/install/minibot:/home/pritam/Desktop/ros_ws/install/cuda_mesh_wrapper:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs:/home/pritam/bcr_ws/install/localization:/home/pritam/bcr_ws/install/hybrid_astar_planner:/home/pritam/bcr_ws/install/fleet_manager:/home/pritam/bcr_ws/install/bcr_bot:/home/pritam/fleet_commander/install/fleet_commander:/opt/ros/jazzy', 'GTK_CURSOR_THEME': 'catppuccin-mocha-dark-cursors', 'FNM_RESOLVE_ENGINES': 'true', 'ANTIGRAVITY_PROJECT_ID': 'default-cli-project', 'SHELL': '/usr/bin/zsh', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:44613', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'hyprland', '_JAVA_AWT_WM_NONREPARENTING': '1', 'KITTY_WINDOW_ID': '1', 'ELECTRON_OZONE_PLATFORM_HINT': 'auto', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'XDG_VTNR': '2', 'ANTIGRAVITY_TRAJECTORY_ID': '95a966f5-d85a-469b-aa0d-9c17f6a5ae19', 'PWD': '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox', 'QT_QPA_PLATFORM': 'xcb', 'LC_ALL': 'en_US.UTF-8', 'FNM_MULTISHELL_PATH': '/run/user/1000/fnm_multishells/5291_1793957867669', 'XDG_BACKEND': 'wayland', 'NVM_CD_FLAGS': '-q', 'XDG_DATA_DIRS': '/home/pritam/.local/share:/home/pritam/.themes:/usr/local/share:/usr/share', 'HGEDITOR': 'false', 'LINOROBOT2_DEPTH_SENSOR': 'realsense', 'STARSHIP_SESSION_KEY': '2856090599487228', 'NVD_BACKEND': 'direct', 'PYTHONPATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs/lib/python3.12/site-packages:/home/pritam/bcr_ws/install/fleet_manager/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'FNM_COREPACK_ENABLED': 'false', 'COLCON': '1', 'MANPATH': '/home/pritam/.nvm/versions/node/v24.11.0/share/man:/home/pritam/.local/share/man:', 'LINOROBOT2_LASER_SENSOR': 'rplidar', 'ANTIGRAVITY_CSRF_TOKEN': '3dbc5d5d-47a7-432b-a351-7ebf828a66c7', 'OPENCODE_API_KEY': 'sk-9iu4SZlNVdp2eNLiV9NGd8kNEgCGQtwg2Q1la9u73YkZBYFX5FW3AeF9Dg4AUKQc', 'GTK_THEME': 'Catppuccin-Mocha-Standard-Blue-Dark', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/pritam/Desktop/ros_ws/install/minibot:/home/pritam/Desktop/ros_ws/install/cuda_mesh_wrapper:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs:/home/pritam/bcr_ws/install/localization:/home/pritam/bcr_ws/install/hybrid_astar_planner:/home/pritam/bcr_ws/install/fleet_manager:/home/pritam/bcr_ws/install/bcr_bot:/home/pritam/fleet_commander/install/fleet_commander:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam:/opt/ros/jazzy'}), 'shell': False}
+[0.093571] (slam_toolbox) StdoutLine: {'line': b'[  0%] Built target slam_toolbox__rosidl_generator_type_description\n'}
+[0.095091] (slam_toolbox) StdoutLine: {'line': b'[  1%] Built target slam_toolbox__rs\n'}
+[0.099807] (-) TimerEvent: {}
+[0.105276] (slam_toolbox) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_symlink_slam_toolbox\n'}
+[0.118666] (slam_toolbox) StdoutLine: {'line': b'[  2%] Built target slam_toolbox__cpp\n'}
+[0.136848] (slam_toolbox) StdoutLine: {'line': b'[ 22%] Built target slam_toolbox__rosidl_generator_c\n'}
+[0.152188] (slam_toolbox) StdoutLine: {'line': b'[ 24%] Built target kartoSlamToolbox\n'}
+[0.175791] (slam_toolbox) StdoutLine: {'line': b'[ 38%] Built target slam_toolbox__rosidl_typesupport_c\n'}
+[0.176060] (slam_toolbox) StdoutLine: {'line': b'[ 39%] Built target slam_toolbox__rosidl_typesupport_introspection_c\n'}
+[0.187144] (slam_toolbox) StdoutLine: {'line': b'[ 47%] Built target slam_toolbox__rosidl_typesupport_cpp\n'}
+[0.188538] (slam_toolbox) StdoutLine: {'line': b'[ 54%] Built target slam_toolbox__rosidl_typesupport_introspection_cpp\n'}
+[0.191412] (slam_toolbox) StdoutLine: {'line': b'[ 61%] Built target slam_toolbox__rosidl_typesupport_fastrtps_c\n'}
+[0.192151] (slam_toolbox) StdoutLine: {'line': b'[ 68%] Built target slam_toolbox__rosidl_typesupport_fastrtps_cpp\n'}
+[0.199942] (-) TimerEvent: {}
+[0.220120] (slam_toolbox) StdoutLine: {'line': b'[ 68%] Built target slam_toolbox\n'}
+[0.245996] (slam_toolbox) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/adaptive_sparse_map_generator_plugin.dir/src/adaptive_sparse_map_generator.cpp.o\x1b[0m\n'}
+[0.250215] (slam_toolbox) StdoutLine: {'line': b'[ 68%] Built target slam_toolbox__py\n'}
+[0.252354] (slam_toolbox) StdoutLine: {'line': b'[ 69%] Built target dense_karto_map_generator_plugin\n'}
+[0.253870] (slam_toolbox) StdoutLine: {'line': b'[ 70%] Built target ceres_solver_plugin\n'}
+[0.255444] (slam_toolbox) StdoutLine: {'line': b'[ 72%] Built target SlamToolboxPlugin\n'}
+[0.294338] (slam_toolbox) StdoutLine: {'line': b'[ 79%] Built target slam_toolbox__rosidl_generator_py\n'}
+[0.296859] (slam_toolbox) StdoutLine: {'line': b'[ 83%] Built target toolbox_common\n'}
+[0.300011] (-) TimerEvent: {}
+[0.331907] (slam_toolbox) StdoutLine: {'line': b'[ 86%] Built target slam_toolbox_s__rosidl_typesupport_fastrtps_c\n'}
+[0.332131] (slam_toolbox) StdoutLine: {'line': b'[ 86%] Built target slam_toolbox_s__rosidl_typesupport_introspection_c\n'}
+[0.332245] (slam_toolbox) StdoutLine: {'line': b'[ 86%] Built target slam_toolbox_s__rosidl_typesupport_c\n'}
+[0.368069] (slam_toolbox) StdoutLine: {'line': b'[ 92%] Built target lifelong_slam_toolbox\n'}
+[0.368306] (slam_toolbox) StdoutLine: {'line': b'[ 92%] Built target async_slam_toolbox\n'}
+[0.368431] (slam_toolbox) StdoutLine: {'line': b'[ 92%] Built target sync_slam_toolbox\n'}
+[0.368547] (slam_toolbox) StdoutLine: {'line': b'[ 92%] Built target merge_maps_kinematic\n'}
+[0.368668] (slam_toolbox) StdoutLine: {'line': b'[ 92%] Built target localization_slam_toolbox\n'}
+[0.400112] (-) TimerEvent: {}
+[0.400303] (slam_toolbox) StdoutLine: {'line': b'running egg_info\n'}
+[0.434155] (slam_toolbox) StdoutLine: {'line': b'writing slam_toolbox.egg-info/PKG-INFO\n'}
+[0.434453] (slam_toolbox) StdoutLine: {'line': b'writing dependency_links to slam_toolbox.egg-info/dependency_links.txt\n'}
+[0.434670] (slam_toolbox) StdoutLine: {'line': b'writing top-level names to slam_toolbox.egg-info/top_level.txt\n'}
+[0.435473] (slam_toolbox) StdoutLine: {'line': b'[ 95%] Built target map_and_localization_slam_toolbox\n'}
+[0.435627] (slam_toolbox) StdoutLine: {'line': b'[ 95%] Built target sync_slam_toolbox_node\n'}
+[0.435746] (slam_toolbox) StdoutLine: {'line': b'[ 95%] Built target lifelong_slam_toolbox_node\n'}
+[0.435939] (slam_toolbox) StdoutLine: {'line': b'[ 97%] Built target localization_slam_toolbox_node\n'}
+[0.436037] (slam_toolbox) StdoutLine: {'line': b'[ 97%] Built target async_slam_toolbox_node\n'}
+[0.497618] (slam_toolbox) StdoutLine: {'line': b'[ 98%] Built target map_and_localization_slam_toolbox_node\n'}
+[0.500173] (-) TimerEvent: {}
+[0.519782] (slam_toolbox) StdoutLine: {'line': b"reading manifest file 'slam_toolbox.egg-info/SOURCES.txt'\n"}
+[0.520321] (slam_toolbox) StdoutLine: {'line': b"writing manifest file 'slam_toolbox.egg-info/SOURCES.txt'\n"}
+[0.545549] (slam_toolbox) StdoutLine: {'line': b'[ 98%] Built target ament_cmake_python_build_slam_toolbox_egg\n'}
+[0.600280] (-) TimerEvent: {}
+[0.700532] (-) TimerEvent: {}
+[0.800828] (-) TimerEvent: {}
+[0.901094] (-) TimerEvent: {}
+[1.001350] (-) TimerEvent: {}
+[1.101613] (-) TimerEvent: {}
+[1.201897] (-) TimerEvent: {}
+[1.302151] (-) TimerEvent: {}
+[1.402435] (-) TimerEvent: {}
+[1.502700] (-) TimerEvent: {}
+[1.602968] (-) TimerEvent: {}
+[1.703222] (-) TimerEvent: {}
+[1.803474] (-) TimerEvent: {}
+[1.903736] (-) TimerEvent: {}
+[2.003977] (-) TimerEvent: {}
+[2.104234] (-) TimerEvent: {}
+[2.204524] (-) TimerEvent: {}
+[2.304807] (-) TimerEvent: {}
+[2.405098] (-) TimerEvent: {}
+[2.505371] (-) TimerEvent: {}
+[2.605674] (-) TimerEvent: {}
+[2.705960] (-) TimerEvent: {}
+[2.806233] (-) TimerEvent: {}
+[2.906525] (-) TimerEvent: {}
+[3.006815] (-) TimerEvent: {}
+[3.107075] (-) TimerEvent: {}
+[3.207326] (-) TimerEvent: {}
+[3.307581] (-) TimerEvent: {}
+[3.407865] (-) TimerEvent: {}
+[3.508144] (-) TimerEvent: {}
+[3.608408] (-) TimerEvent: {}
+[3.708690] (-) TimerEvent: {}
+[3.808970] (-) TimerEvent: {}
+[3.909246] (-) TimerEvent: {}
+[4.009516] (-) TimerEvent: {}
+[4.109774] (-) TimerEvent: {}
+[4.210048] (-) TimerEvent: {}
+[4.310330] (-) TimerEvent: {}
+[4.410634] (-) TimerEvent: {}
+[4.511024] (-) TimerEvent: {}
+[4.611507] (-) TimerEvent: {}
+[4.711967] (-) TimerEvent: {}
+[4.812410] (-) TimerEvent: {}
+[4.912681] (-) TimerEvent: {}
+[5.012962] (-) TimerEvent: {}
+[5.113227] (-) TimerEvent: {}
+[5.213491] (-) TimerEvent: {}
+[5.313764] (-) TimerEvent: {}
+[5.414019] (-) TimerEvent: {}
+[5.514284] (-) TimerEvent: {}
+[5.614562] (-) TimerEvent: {}
+[5.714863] (-) TimerEvent: {}
+[5.815132] (-) TimerEvent: {}
+[5.915408] (-) TimerEvent: {}
+[6.015699] (-) TimerEvent: {}
+[6.115970] (-) TimerEvent: {}
+[6.216232] (-) TimerEvent: {}
+[6.316521] (-) TimerEvent: {}
+[6.416791] (-) TimerEvent: {}
+[6.517046] (-) TimerEvent: {}
+[6.617312] (-) TimerEvent: {}
+[6.717558] (-) TimerEvent: {}
+[6.817839] (-) TimerEvent: {}
+[6.918095] (-) TimerEvent: {}
+[7.018335] (-) TimerEvent: {}
+[7.118583] (-) TimerEvent: {}
+[7.218840] (-) TimerEvent: {}
+[7.319111] (-) TimerEvent: {}
+[7.419465] (-) TimerEvent: {}
+[7.519819] (-) TimerEvent: {}
+[7.620096] (-) TimerEvent: {}
+[7.720364] (-) TimerEvent: {}
+[7.820622] (-) TimerEvent: {}
+[7.920884] (-) TimerEvent: {}
+[8.021144] (-) TimerEvent: {}
+[8.121409] (-) TimerEvent: {}
+[8.221654] (-) TimerEvent: {}
+[8.269555] (slam_toolbox) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking CXX shared library libadaptive_sparse_map_generator_plugin.so\x1b[0m\n'}
+[8.321765] (-) TimerEvent: {}
+[8.422045] (-) TimerEvent: {}
+[8.522338] (-) TimerEvent: {}
+[8.600808] (slam_toolbox) StdoutLine: {'line': b'[ 99%] Built target adaptive_sparse_map_generator_plugin\n'}
+[8.622426] (-) TimerEvent: {}
+[8.656263] (slam_toolbox) StdoutLine: {'line': b'[100%] \x1b[32mBuilding CXX object CMakeFiles/benchmark_map_generators.dir/test/benchmark_map_generators.cpp.o\x1b[0m\n'}
+[8.722535] (-) TimerEvent: {}
+[8.822814] (-) TimerEvent: {}
+[8.923080] (-) TimerEvent: {}
+[9.023323] (-) TimerEvent: {}
+[9.123975] (-) TimerEvent: {}
+[9.224227] (-) TimerEvent: {}
+[9.324488] (-) TimerEvent: {}
+[9.424748] (-) TimerEvent: {}
+[9.525016] (-) TimerEvent: {}
+[9.625288] (-) TimerEvent: {}
+[9.728765] (-) TimerEvent: {}
+[9.829209] (-) TimerEvent: {}
+[9.929479] (-) TimerEvent: {}
+[10.029754] (-) TimerEvent: {}
+[10.130028] (-) TimerEvent: {}
+[10.230265] (-) TimerEvent: {}
+[10.330526] (-) TimerEvent: {}
+[10.430813] (-) TimerEvent: {}
+[10.531080] (-) TimerEvent: {}
+[10.631355] (-) TimerEvent: {}
+[10.731614] (-) TimerEvent: {}
+[10.831895] (-) TimerEvent: {}
+[10.932162] (-) TimerEvent: {}
+[11.032429] (-) TimerEvent: {}
+[11.132707] (-) TimerEvent: {}
+[11.232955] (-) TimerEvent: {}
+[11.333204] (-) TimerEvent: {}
+[11.433489] (-) TimerEvent: {}
+[11.533787] (-) TimerEvent: {}
+[11.634055] (-) TimerEvent: {}
+[11.734341] (-) TimerEvent: {}
+[11.834611] (-) TimerEvent: {}
+[11.934895] (-) TimerEvent: {}
+[12.035157] (-) TimerEvent: {}
+[12.135428] (-) TimerEvent: {}
+[12.235707] (-) TimerEvent: {}
+[12.335963] (-) TimerEvent: {}
+[12.436235] (-) TimerEvent: {}
+[12.536496] (-) TimerEvent: {}
+[12.636751] (-) TimerEvent: {}
+[12.737013] (-) TimerEvent: {}
+[12.837283] (-) TimerEvent: {}
+[12.937548] (-) TimerEvent: {}
+[13.037831] (-) TimerEvent: {}
+[13.138096] (-) TimerEvent: {}
+[13.238350] (-) TimerEvent: {}
+[13.338635] (-) TimerEvent: {}
+[13.438918] (-) TimerEvent: {}
+[13.539157] (-) TimerEvent: {}
+[13.639399] (-) TimerEvent: {}
+[13.739657] (-) TimerEvent: {}
+[13.839910] (-) TimerEvent: {}
+[13.940172] (-) TimerEvent: {}
+[14.040442] (-) TimerEvent: {}
+[14.140715] (-) TimerEvent: {}
+[14.241000] (-) TimerEvent: {}
+[14.341330] (-) TimerEvent: {}
+[14.441667] (-) TimerEvent: {}
+[14.542116] (-) TimerEvent: {}
+[14.642443] (-) TimerEvent: {}
+[14.742778] (-) TimerEvent: {}
+[14.843087] (-) TimerEvent: {}
+[14.943464] (-) TimerEvent: {}
+[15.043864] (-) TimerEvent: {}
+[15.144261] (-) TimerEvent: {}
+[15.244561] (-) TimerEvent: {}
+[15.345014] (-) TimerEvent: {}
+[15.445287] (-) TimerEvent: {}
+[15.545562] (-) TimerEvent: {}
+[15.645835] (-) TimerEvent: {}
+[15.746088] (-) TimerEvent: {}
+[15.846346] (-) TimerEvent: {}
+[15.946610] (-) TimerEvent: {}
+[16.046890] (-) TimerEvent: {}
+[16.147146] (-) TimerEvent: {}
+[16.247404] (-) TimerEvent: {}
+[16.347644] (-) TimerEvent: {}
+[16.447895] (-) TimerEvent: {}
+[16.548152] (-) TimerEvent: {}
+[16.648417] (-) TimerEvent: {}
+[16.748679] (-) TimerEvent: {}
+[16.848933] (-) TimerEvent: {}
+[16.949204] (-) TimerEvent: {}
+[17.049455] (-) TimerEvent: {}
+[17.149703] (-) TimerEvent: {}
+[17.249980] (-) TimerEvent: {}
+[17.350226] (-) TimerEvent: {}
+[17.450461] (-) TimerEvent: {}
+[17.550697] (-) TimerEvent: {}
+[17.650961] (-) TimerEvent: {}
+[17.751232] (-) TimerEvent: {}
+[17.851512] (-) TimerEvent: {}
+[17.951793] (-) TimerEvent: {}
+[17.953948] (slam_toolbox) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable benchmark_map_generators\x1b[0m\n'}
+[18.051901] (-) TimerEvent: {}
+[18.152182] (-) TimerEvent: {}
+[18.238569] (slam_toolbox) StdoutLine: {'line': b'[100%] Built target benchmark_map_generators\n'}
+[18.252273] (-) TimerEvent: {}
+[18.253251] (slam_toolbox) CommandEnded: {'returncode': 0}
+[18.253945] (slam_toolbox) JobProgress: {'identifier': 'slam_toolbox', 'progress': 'install'}
+[18.264912] (slam_toolbox) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox'], 'cwd': '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib/rmf_robot_sim_gz_plugins/:/opt/ros/jazzy/lib/rmf_building_sim_gz_plugins/', 'JJ_PAGER': 'cat', 'LINOROBOT2_BASE': '2wd', 'GZ_GUI_PLUGIN_PATH': '/opt/ros/jazzy/lib/rmf_robot_sim_gz_plugins/:/opt/ros/jazzy/lib/rmf_building_sim_gz_plugins/', 'GTK_ICON_THEME': 'Flat-Remix-Blue-Dark', 'HYPRCURSOR_THEME': 'Bibata-Modern-Ice', 'QT_SCALE_FACTOR': '1', 'HYPRLAND_CMD': 'Hyprland --watchdog-fd 4', 'USER': 'pritam', 'HYPRLAND_INSTANCE_SIGNATURE': 'efb50993780079460b0cbed1363e2166a2de1d9f_1793957849_1930955956', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"b64b205f-4d57-4eb8-8972-2cbad3c4a4c4", "stepIndex":13421, "toolCall":{"id":"call_609544427770459954", "name":"run_command", "argumentsJson":"{\\"CommandLine\\":\\"cd /home/pritam/slam/slam_toolbox_upstream \\\\u0026\\\\u0026 colcon build --symlink-install --packages-select slam_toolbox\\\\ncd /home/pritam/bcr_ws \\\\u0026\\\\u0026 colcon build --symlink-install --packages-select adaptive_costmap_2d\\",\\"WaitMsBeforeAsync\\":10000,\\"toolSummary\\":\\"Rebuild slam_toolbox and adaptive_costmap_2d\\"}"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'STARSHIP_SHELL': 'zsh', 'GIT_EDITOR': 'false', 'XDG_SESSION_TYPE': 'wayland', 'BUN_INSTALL': '/home/pritam/.bun', '__GLX_VENDOR_LIBRARY_NAME': 'mesa', 'ANTIGRAVITY_AGENTAPI_EXE': '/home/pritam/.local/bin/agy', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com/lib:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs/lib:/home/pritam/bcr_ws/install/hybrid_astar_planner/lib:/opt/ros/jazzy/opt/zenoh_cpp_vendor/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'LESS': '-R', 'HOME': '/home/pritam', 'TERMINFO': '/home/pritam/.local/lib/kitty/terminfo', 'MOZ_ENABLE_WAYLAND': '1', 'OLDPWD': '/home/pritam/slam', 'DESKTOP_SESSION': 'hyprland', 'NVM_BIN': '/home/pritam/.nvm/versions/node/v24.11.0/bin', 'KITTY_INSTALLATION_DIR': '/home/pritam/.local/lib/kitty', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'NVM_INC': '/home/pritam/.nvm/versions/node/v24.11.0/include/node', 'ZSH': '/home/pritam/.oh-my-zsh', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'FNM_ARCH': 'x64', 'KITTY_PID': '4767', 'JJ_EDITOR': 'false', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'GDK_SCALE': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'QT_WAYLAND_DISABLE_WINDOWDECORATION': '1', 'ANTIGRAVITY_AGENT': '1', 'NVM_DIR': '/home/pritam/.nvm', 'QT_QPA_PLATFORMTHEME': 'qt6ct', 'WAYLAND_DISPLAY': 'wayland-1', 'COLCON_PREFIX_PATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install:/home/pritam/bcr_ws/install:/home/pritam/Desktop/ros_ws/install:/home/pritam/fleet_commander/install', 'FNM_VERSION_FILE_STRATEGY': 'local', 'ROS_DISTRO': 'jazzy', 'FNM_LOGLEVEL': 'info', 'LOGNAME': 'pritam', 'FNM_NODE_DIST_MIRROR': 'https://nodejs.org/dist', 'QT_AUTO_SCREEN_SCALE_FACTOR': '1', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'SNACKS_KITTY': 'true', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'wayland', 'KITTY_PUBLIC_KEY': '1:<0*)|+PZsUH6V_)U7t`P`ANJ{Pm(L2MH&7zT4o<e', 'USERNAME': 'pritam', 'TERM': 'dumb', 'XDG_SESSION_ID': '2', 'DOTS_VERSION': '2.3.20', 'ANTIGRAVITY_APP_DATA_DIR': '/home/pritam/.gemini/antigravity-cli', 'ANTIGRAVITY_LS_VERSION': 'cli-1.5.2', 'PATH': '/home/pritam/.gemini/antigravity-cli/bin:/home/pritam/.local/bin:/home/pritam/.local/share/../bin:/home/pritam/.opencode/bin:/home/pritam/.bun/bin:/run/user/1000/fnm_multishells/5291_1793957867669/bin:/home/pritam/.local/share/fnm:/home/pritam/.nvm/versions/node/v24.11.0/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/pritam/.cargo/bin:/home/pritam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/pritam/Groot2/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland,x11,*', 'DISPLAY': ':0', 'HYPRCURSOR_SIZE': '24', 'LD_PRELOAD': '/usr/lib/x86_64-linux-gnu/libpthread.so.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Hyprland', 'ANTIGRAVITY_CONVERSATION_ID': 'b64b205f-4d57-4eb8-8972-2cbad3c4a4c4', 'GZ_IP': '127.0.0.1', 'ZENOH_SESSION_CONFIG_URI': '/home/pritam/zenoh_session_config.json5', 'RMW_IMPLEMENTATION': 'rmw_zenoh_cpp', 'XDG_DATA_HOME': '/home/pritam/.local/share', 'LIBVA_DRIVER_NAME': 'nvidia', 'XDG_SESSION_DESKTOP': 'Hyprland', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'FNM_DIR': '/home/pritam/.local/share/fnm', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/home/pritam/Desktop/ros_ws/install/minibot:/home/pritam/Desktop/ros_ws/install/cuda_mesh_wrapper:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs:/home/pritam/bcr_ws/install/localization:/home/pritam/bcr_ws/install/hybrid_astar_planner:/home/pritam/bcr_ws/install/fleet_manager:/home/pritam/bcr_ws/install/bcr_bot:/home/pritam/fleet_commander/install/fleet_commander:/opt/ros/jazzy', 'GTK_CURSOR_THEME': 'catppuccin-mocha-dark-cursors', 'FNM_RESOLVE_ENGINES': 'true', 'ANTIGRAVITY_PROJECT_ID': 'default-cli-project', 'SHELL': '/usr/bin/zsh', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:44613', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'hyprland', '_JAVA_AWT_WM_NONREPARENTING': '1', 'KITTY_WINDOW_ID': '1', 'ELECTRON_OZONE_PLATFORM_HINT': 'auto', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'XDG_VTNR': '2', 'ANTIGRAVITY_TRAJECTORY_ID': '95a966f5-d85a-469b-aa0d-9c17f6a5ae19', 'PWD': '/home/pritam/slam/slam_toolbox_upstream/build/slam_toolbox', 'QT_QPA_PLATFORM': 'xcb', 'LC_ALL': 'en_US.UTF-8', 'FNM_MULTISHELL_PATH': '/run/user/1000/fnm_multishells/5291_1793957867669', 'XDG_BACKEND': 'wayland', 'NVM_CD_FLAGS': '-q', 'XDG_DATA_DIRS': '/home/pritam/.local/share:/home/pritam/.themes:/usr/local/share:/usr/share', 'HGEDITOR': 'false', 'LINOROBOT2_DEPTH_SENSOR': 'realsense', 'STARSHIP_SESSION_KEY': '2856090599487228', 'NVD_BACKEND': 'direct', 'PYTHONPATH': '/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam/lib/python3.12/site-packages:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs/lib/python3.12/site-packages:/home/pritam/bcr_ws/install/fleet_manager/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'FNM_COREPACK_ENABLED': 'false', 'COLCON': '1', 'MANPATH': '/home/pritam/.nvm/versions/node/v24.11.0/share/man:/home/pritam/.local/share/man:', 'LINOROBOT2_LASER_SENSOR': 'rplidar', 'ANTIGRAVITY_CSRF_TOKEN': '3dbc5d5d-47a7-432b-a351-7ebf828a66c7', 'OPENCODE_API_KEY': 'sk-9iu4SZlNVdp2eNLiV9NGd8kNEgCGQtwg2Q1la9u73YkZBYFX5FW3AeF9Dg4AUKQc', 'GTK_THEME': 'Catppuccin-Mocha-Standard-Blue-Dark', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/pritam/Desktop/ros_ws/install/minibot:/home/pritam/Desktop/ros_ws/install/cuda_mesh_wrapper:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_ros_com:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_msgs:/home/pritam/bcr_ws/install/localization:/home/pritam/bcr_ws/install/hybrid_astar_planner:/home/pritam/bcr_ws/install/fleet_manager:/home/pritam/bcr_ws/install/bcr_bot:/home/pritam/fleet_commander/install/fleet_commander:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/px4_rl_project:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam_cam:/home/pritam/Documents/nidar/prac/px4_ros2_ws/install/drone_slam:/opt/ros/jazzy'}), 'shell': False}
+[18.275497] (slam_toolbox) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[18.275672] (slam_toolbox) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[18.275793] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/Karto.h\n'}
+[18.275918] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/Macros.h\n'}
+[18.276031] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/Mapper.h\n'}
+[18.276139] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/Math.h\n'}
+[18.276316] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/Types.h\n'}
+[18.276479] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/nanoflann.hpp\n'}
+[18.276615] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include//karto_sdk/nanoflann_adaptors.h\n'}
+[18.276757] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/rosidl_interfaces/slam_toolbox\n'}
+[18.276890] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Pause.json\n'}
+[18.276983] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Reset.json\n'}
+[18.277073] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ClearQueue.json\n'}
+[18.277155] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ToggleInteractive.json\n'}
+[18.277273] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Clear.json\n'}
+[18.277372] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SaveMap.json\n'}
+[18.277463] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/LoopClosure.json\n'}
+[18.277578] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/MergeMaps.json\n'}
+[18.277713] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/AddSubmap.json\n'}
+[18.277850] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/DeserializePoseGraph.json\n'}
+[18.277986] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SerializePoseGraph.json\n'}
+[18.278855] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/msg/rosidl_generator_c__visibility_control.h\n'}
+[18.278967] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/add_submap.h\n'}
+[18.279073] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/clear.h\n'}
+[18.279162] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/clear_queue.h\n'}
+[18.279268] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/deserialize_pose_graph.h\n'}
+[18.279371] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__functions.h\n'}
+[18.279468] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__struct.h\n'}
+[18.279568] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__type_support.h\n'}
+[18.279727] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__functions.h\n'}
+[18.279829] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__struct.h\n'}
+[18.279932] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__type_support.h\n'}
+[18.280033] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__functions.h\n'}
+[18.280139] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__struct.h\n'}
+[18.280233] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__type_support.h\n'}
+[18.280338] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__functions.h\n'}
+[18.280433] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__struct.h\n'}
+[18.280533] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__type_support.h\n'}
+[18.280641] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__functions.h\n'}
+[18.280756] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__struct.h\n'}
+[18.280860] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__type_support.h\n'}
+[18.280959] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__functions.h\n'}
+[18.281062] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__struct.h\n'}
+[18.281160] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__type_support.h\n'}
+[18.281259] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__functions.h\n'}
+[18.281360] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__struct.h\n'}
+[18.281460] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__type_support.h\n'}
+[18.281560] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__functions.h\n'}
+[18.281667] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__struct.h\n'}
+[18.281767] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__type_support.h\n'}
+[18.281867] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__functions.h\n'}
+[18.281966] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__struct.h\n'}
+[18.282065] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__type_support.h\n'}
+[18.282166] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__functions.h\n'}
+[18.282264] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__struct.h\n'}
+[18.282369] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__type_support.h\n'}
+[18.282464] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__functions.h\n'}
+[18.282576] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__struct.h\n'}
+[18.282671] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__type_support.h\n'}
+[18.282775] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/loop_closure.h\n'}
+[18.282869] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/merge_maps.h\n'}
+[18.282965] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/pause.h\n'}
+[18.283061] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/reset.h\n'}
+[18.283156] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/save_map.h\n'}
+[18.283253] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/serialize_pose_graph.h\n'}
+[18.283349] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/toggle_interactive.h\n'}
+[18.283490] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/library_path.sh\n'}
+[18.283616] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/library_path.dsv\n'}
+[18.284248] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[18.284355] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284470] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284573] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284684] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284787] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284889] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__rosidl_typesupport_fastrtps_c.h\n'}
+[18.284989] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__rosidl_typesupport_fastrtps_c.h\n'}
+[18.285092] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__rosidl_typesupport_fastrtps_c.h\n'}
+[18.285194] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__rosidl_typesupport_fastrtps_c.h\n'}
+[18.285301] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__rosidl_typesupport_fastrtps_c.h\n'}
+[18.285394] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__rosidl_typesupport_fastrtps_c.h\n'}
+[18.286090] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[18.286189] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/add_submap.hpp\n'}
+[18.286288] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/clear.hpp\n'}
+[18.286385] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/clear_queue.hpp\n'}
+[18.286490] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/deserialize_pose_graph.hpp\n'}
+[18.286590] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__builder.hpp\n'}
+[18.286702] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__struct.hpp\n'}
+[18.286803] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__traits.hpp\n'}
+[18.286905] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__type_support.hpp\n'}
+[18.287005] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__builder.hpp\n'}
+[18.287105] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__struct.hpp\n'}
+[18.287205] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__traits.hpp\n'}
+[18.287306] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__type_support.hpp\n'}
+[18.287405] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__builder.hpp\n'}
+[18.287507] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__struct.hpp\n'}
+[18.287606] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__traits.hpp\n'}
+[18.287715] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__type_support.hpp\n'}
+[18.287816] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__builder.hpp\n'}
+[18.287916] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__struct.hpp\n'}
+[18.288016] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__traits.hpp\n'}
+[18.288122] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__type_support.hpp\n'}
+[18.288225] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__builder.hpp\n'}
+[18.288327] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__struct.hpp\n'}
+[18.288427] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__traits.hpp\n'}
+[18.288525] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__type_support.hpp\n'}
+[18.288627] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__builder.hpp\n'}
+[18.288760] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__struct.hpp\n'}
+[18.288861] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__traits.hpp\n'}
+[18.288962] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__type_support.hpp\n'}
+[18.289062] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__builder.hpp\n'}
+[18.289162] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__struct.hpp\n'}
+[18.289261] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__traits.hpp\n'}
+[18.289362] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__type_support.hpp\n'}
+[18.289461] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__builder.hpp\n'}
+[18.289563] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__struct.hpp\n'}
+[18.289678] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__traits.hpp\n'}
+[18.289771] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__type_support.hpp\n'}
+[18.289871] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__builder.hpp\n'}
+[18.289971] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__struct.hpp\n'}
+[18.290071] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__traits.hpp\n'}
+[18.290171] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__type_support.hpp\n'}
+[18.290273] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__builder.hpp\n'}
+[18.290375] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__struct.hpp\n'}
+[18.290476] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__traits.hpp\n'}
+[18.290574] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__type_support.hpp\n'}
+[18.290685] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__builder.hpp\n'}
+[18.290786] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__struct.hpp\n'}
+[18.290886] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__traits.hpp\n'}
+[18.290986] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__type_support.hpp\n'}
+[18.291085] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/loop_closure.hpp\n'}
+[18.291182] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/merge_maps.hpp\n'}
+[18.291284] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/pause.hpp\n'}
+[18.291379] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/reset.hpp\n'}
+[18.291477] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/save_map.hpp\n'}
+[18.291575] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/serialize_pose_graph.hpp\n'}
+[18.291683] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/toggle_interactive.hpp\n'}
+[18.292337] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[18.292453] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.292577] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.292674] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.292759] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.292859] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.292959] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293063] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293167] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293262] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293363] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293468] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[18.293899] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[18.294002] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__rosidl_typesupport_introspection_c.h\n'}
+[18.294105] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__rosidl_typesupport_introspection_c.h\n'}
+[18.294208] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__rosidl_typesupport_introspection_c.h\n'}
+[18.294308] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__rosidl_typesupport_introspection_c.h\n'}
+[18.294409] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__rosidl_typesupport_introspection_c.h\n'}
+[18.294513] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__rosidl_typesupport_introspection_c.h\n'}
+[18.294610] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__rosidl_typesupport_introspection_c.h\n'}
+[18.294725] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__rosidl_typesupport_introspection_c.h\n'}
+[18.294828] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__rosidl_typesupport_introspection_c.h\n'}
+[18.294934] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__rosidl_typesupport_introspection_c.h\n'}
+[18.295052] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__rosidl_typesupport_introspection_c.h\n'}
+[18.295468] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/add_submap__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.295579] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.295703] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/clear_queue__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.295805] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/deserialize_pose_graph__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.295897] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/loop_closure__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296000] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/merge_maps__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296101] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/pause__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296200] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/reset__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296305] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/save_map__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296408] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/serialize_pose_graph__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296508] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox/srv/detail/toggle_interactive__rosidl_typesupport_introspection_cpp.hpp\n'}
+[18.296654] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/pythonpath.sh\n'}
+[18.296791] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/pythonpath.dsv\n'}
+[18.297038] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox-2.8.5-py3.12.egg-info/PKG-INFO\n'}
+[18.297141] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox-2.8.5-py3.12.egg-info/SOURCES.txt\n'}
+[18.297240] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox-2.8.5-py3.12.egg-info/dependency_links.txt\n'}
+[18.297337] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox-2.8.5-py3.12.egg-info/top_level.txt\n'}
+[18.298084] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/__init__.py\n'}
+[18.298183] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/_slam_toolbox_s.ep.rosidl_typesupport_c.c\n'}
+[18.298278] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/_slam_toolbox_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[18.298372] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/_slam_toolbox_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[18.298466] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_c.so\n'}
+[18.298566] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_fastrtps_c.so\n'}
+[18.298664] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_introspection_c.so\n'}
+[18.298769] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/__init__.py\n'}
+[18.298868] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_add_submap.py\n'}
+[18.298966] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_add_submap_s.c\n'}
+[18.299072] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_clear.py\n'}
+[18.299170] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_clear_queue.py\n'}
+[18.299268] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_clear_queue_s.c\n'}
+[18.299366] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_clear_s.c\n'}
+[18.299465] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_deserialize_pose_graph.py\n'}
+[18.299563] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_deserialize_pose_graph_s.c\n'}
+[18.299678] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_loop_closure.py\n'}
+[18.299787] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_loop_closure_s.c\n'}
+[18.299872] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_merge_maps.py\n'}
+[18.299965] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_merge_maps_s.c\n'}
+[18.300083] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_pause.py\n'}
+[18.300165] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_pause_s.c\n'}
+[18.300259] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_reset.py\n'}
+[18.300352] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_reset_s.c\n'}
+[18.300447] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_save_map.py\n'}
+[18.300544] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_save_map_s.c\n'}
+[18.300642] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_serialize_pose_graph.py\n'}
+[18.300749] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_serialize_pose_graph_s.c\n'}
+[18.300845] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_toggle_interactive.py\n'}
+[18.300942] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv/_toggle_interactive_s.c\n'}
+[18.301168] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_fastrtps_c.so\n'}
+[18.301363] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_introspection_c.so\n'}
+[18.301557] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/slam_toolbox_s__rosidl_typesupport_c.so\n'}
+[18.301715] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/rust_packages/slam_toolbox\n'}
+[18.302001] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/rust/Cargo.toml\n'}
+[18.302117] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/rust/build.rs\n'}
+[18.302206] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/rust/src/lib.rs\n'}
+[18.302298] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/rust/src/srv.rs\n'}
+[18.302399] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/rust/src/srv/rmw.rs\n'}
+[18.302534] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Pause.idl\n'}
+[18.302672] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Reset.idl\n'}
+[18.302802] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ClearQueue.idl\n'}
+[18.302932] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ToggleInteractive.idl\n'}
+[18.303061] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Clear.idl\n'}
+[18.303185] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SaveMap.idl\n'}
+[18.303317] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/LoopClosure.idl\n'}
+[18.303444] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/MergeMaps.idl\n'}
+[18.303572] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/AddSubmap.idl\n'}
+[18.303707] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/DeserializePoseGraph.idl\n'}
+[18.303844] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SerializePoseGraph.idl\n'}
+[18.303954] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Pause.srv\n'}
+[18.304070] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Reset.srv\n'}
+[18.304187] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ClearQueue.srv\n'}
+[18.304304] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/ToggleInteractive.srv\n'}
+[18.304419] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/Clear.srv\n'}
+[18.304535] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SaveMap.srv\n'}
+[18.304655] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/LoopClosure.srv\n'}
+[18.304779] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/MergeMaps.srv\n'}
+[18.304890] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/AddSubmap.srv\n'}
+[18.305008] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/DeserializePoseGraph.srv\n'}
+[18.305127] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/srv/SerializePoseGraph.srv\n'}
+[18.305242] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox//rviz_plugins.xml\n'}
+[18.305355] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox//solver_plugins.xml\n'}
+[18.305473] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox//map_generator_plugins.xml\n'}
+[18.305752] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/async_slam_toolbox_node\n'}
+[18.305873] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/sync_slam_toolbox_node\n'}
+[18.305989] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/localization_slam_toolbox_node\n'}
+[18.306105] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/map_and_localization_slam_toolbox_node\n'}
+[18.306223] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/lifelong_slam_toolbox_node\n'}
+[18.306339] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/slam_toolbox/merge_maps_kinematic\n'}
+[18.306453] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libtoolbox_common.so\n'}
+[18.306565] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libSlamToolboxPlugin.so\n'}
+[18.306686] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libceres_solver_plugin.so\n'}
+[18.306801] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libdense_karto_map_generator_plugin.so\n'}
+[18.306914] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libadaptive_sparse_map_generator_plugin.so\n'}
+[18.307024] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libasync_slam_toolbox.so\n'}
+[18.307135] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libsync_slam_toolbox.so\n'}
+[18.307247] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/liblocalization_slam_toolbox.so\n'}
+[18.307357] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/liblifelong_slam_toolbox.so\n'}
+[18.307468] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libmap_and_localization_slam_toolbox.so\n'}
+[18.307583] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libkartoSlamToolbox.so\n'}
+[18.308014] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/adaptive/sparse_block.hpp\n'}
+[18.308114] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/adaptive/sparse_grid_2d.hpp\n'}
+[18.308208] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/adaptive_sparse_map_generator.hpp\n'}
+[18.308287] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/dense_karto_map_generator.hpp\n'}
+[18.308383] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/experimental/slam_toolbox_lifelong.hpp\n'}
+[18.308473] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/experimental/slam_toolbox_map_and_localization.hpp\n'}
+[18.308560] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/get_pose_helper.hpp\n'}
+[18.308652] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/laser_utils.hpp\n'}
+[18.308743] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/loop_closure_assistant.hpp\n'}
+[18.308830] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/map_generator.hpp\n'}
+[18.308917] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/map_saver.hpp\n'}
+[18.309005] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/merge_maps_kinematic.hpp\n'}
+[18.309090] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/serialization.hpp\n'}
+[18.309176] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_mapper.hpp\n'}
+[18.309263] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox_async.hpp\n'}
+[18.309348] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox_common.hpp\n'}
+[18.309438] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox_localization.hpp\n'}
+[18.309539] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/slam_toolbox_sync.hpp\n'}
+[18.309626] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/snap_utils.hpp\n'}
+[18.309713] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/toolbox_msgs.hpp\n'}
+[18.309797] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/toolbox_types.hpp\n'}
+[18.309888] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/include/slam_toolbox/visualization_utils.hpp\n'}
+[18.310204] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/launch/localization_launch.py\n'}
+[18.310294] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/launch/merge_maps_kinematic_launch.py\n'}
+[18.310389] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/launch/offline_launch.py\n'}
+[18.310486] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/launch/online_async_launch.py\n'}
+[18.310582] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/launch/online_sync_launch.py\n'}
+[18.310845] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/mapper_params_lifelong.yaml\n'}
+[18.310938] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/mapper_params_localization.yaml\n'}
+[18.311027] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/mapper_params_offline.yaml\n'}
+[18.311123] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/mapper_params_online_async.yaml\n'}
+[18.311214] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/mapper_params_online_sync.yaml\n'}
+[18.311300] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/config/slam_toolbox_default.rviz\n'}
+[18.311433] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/solver_plugins.xml\n'}
+[18.311521] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/rviz_plugins.xml\n'}
+[18.311625] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/map_generator_plugins.xml\n'}
+[18.311772] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/package_run_dependencies/slam_toolbox\n'}
+[18.311909] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/parent_prefix_path/slam_toolbox\n'}
+[18.312043] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/ament_prefix_path.sh\n'}
+[18.312169] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/ament_prefix_path.dsv\n'}
+[18.312294] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/path.sh\n'}
+[18.312416] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/environment/path.dsv\n'}
+[18.312539] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/local_setup.bash\n'}
+[18.312676] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/local_setup.sh\n'}
+[18.312799] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/local_setup.zsh\n'}
+[18.312922] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/local_setup.dsv\n'}
+[18.313004] (slam_toolbox) StdoutLine: {'line': b'-- Symlinking: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/package.dsv\n'}
+[18.323452] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/packages/slam_toolbox\n'}
+[18.323635] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/rclcpp_components/slam_toolbox\n'}
+[18.323810] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/rviz_common__pluginlib__plugin/slam_toolbox\n'}
+[18.323981] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/ament_index/resource_index/slam_toolbox__pluginlib__plugin/slam_toolbox\n'}
+[18.324149] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/rosidl_cmake-extras.cmake\n'}
+[18.324307] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[18.324464] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[18.324615] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[18.324752] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[18.324883] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[18.324999] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[18.325127] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[18.325248] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolboxConfig.cmake\n'}
+[18.325347] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolboxConfig-version.cmake\n'}
+[18.325471] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date symlink: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/package.xml\n'}
+[18.326220] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_generator_c.so\n'}
+[18.326558] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_fastrtps_c.so\n'}
+[18.326894] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_fastrtps_cpp.so\n'}
+[18.327195] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_introspection_c.so\n'}
+[18.327508] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_c.so\n'}
+[18.327788] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_introspection_cpp.so\n'}
+[18.328123] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_typesupport_cpp.so\n'}
+[18.352354] (-) TimerEvent: {}
+[18.360436] (slam_toolbox) StdoutLine: {'line': b"Listing '/home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox'...\n"}
+[18.360693] (slam_toolbox) StdoutLine: {'line': b"Listing '/home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/python3.12/site-packages/slam_toolbox/srv'...\n"}
+[18.365566] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/lib/libslam_toolbox__rosidl_generator_py.so\n'}
+[18.365965] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_generator_cExport.cmake\n'}
+[18.366075] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_generator_cExport-release.cmake\n'}
+[18.366173] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[18.366272] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[18.366368] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_generator_cppExport.cmake\n'}
+[18.366464] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[18.366536] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[18.366632] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_introspection_cExport.cmake\n'}
+[18.366714] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[18.366800] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_cExport.cmake\n'}
+[18.366871] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_cExport-release.cmake\n'}
+[18.366951] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[18.367032] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[18.367091] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_cppExport.cmake\n'}
+[18.367147] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/slam_toolbox__rosidl_typesupport_cppExport-release.cmake\n'}
+[18.367228] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_generator_pyExport.cmake\n'}
+[18.367297] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/export_slam_toolbox__rosidl_generator_pyExport-release.cmake\n'}
+[18.367352] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/SlamToolboxPluginExport.cmake\n'}
+[18.367405] (slam_toolbox) StdoutLine: {'line': b'-- Up-to-date: /home/pritam/slam/slam_toolbox_upstream/install/slam_toolbox/share/slam_toolbox/cmake/SlamToolboxPluginExport-release.cmake\n'}
+[18.369524] (slam_toolbox) CommandEnded: {'returncode': 0}
+[18.390757] (slam_toolbox) JobEnded: {'identifier': 'slam_toolbox', 'rc': 0}
+[18.391380] (-) EventReactorShutdown: {}

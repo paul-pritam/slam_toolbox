@@ -89,11 +89,15 @@ public:
     double resolution = 0.05,
     double origin_x = 0.0,
     double origin_y = 0.0,
-    uint8_t default_value = 0)
+    uint8_t default_value = 0,
+    uint32_t min_pass_through = 2,
+    double occupancy_threshold = 0.1)
   : resolution_(resolution),
     origin_x_(origin_x),
     origin_y_(origin_y),
     default_value_(default_value),
+    min_pass_through_(min_pass_through),
+    occupancy_threshold_(occupancy_threshold),
     min_cell_x_(std::numeric_limits<int>::max()),
     min_cell_y_(std::numeric_limits<int>::max()),
     max_cell_x_(std::numeric_limits<int>::lowest()),
@@ -222,6 +226,124 @@ public:
     int cell_x, cell_y;
     world_to_cell(world_x, world_y, cell_x, cell_y);
     set_cost(cell_x, cell_y, cost, timestamp);
+  }
+
+  // =========================================================================
+  // Probabilistic Occupancy Configuration & Methods (Karto SDK logic parity)
+  // =========================================================================
+
+  /**
+   * @brief Set the minimum pass count required before classifying a cell.
+   * @param val Minimum pass count (default: 2).
+   */
+  void set_min_pass_through(uint32_t val) noexcept
+  {
+    min_pass_through_ = val;
+  }
+
+  /**
+   * @brief Get the minimum pass count threshold.
+   */
+  [[nodiscard]] uint32_t get_min_pass_through() const noexcept
+  {
+    return min_pass_through_;
+  }
+
+  /**
+   * @brief Set the occupancy threshold ratio (hits / passes).
+   * @param val Threshold ratio in range (0.0, 1.0) (default: 0.1).
+   */
+  void set_occupancy_threshold(double val) noexcept
+  {
+    occupancy_threshold_ = val;
+  }
+
+  /**
+   * @brief Get the occupancy threshold ratio.
+   */
+  [[nodiscard]] double get_occupancy_threshold() const noexcept
+  {
+    return occupancy_threshold_;
+  }
+
+  /**
+   * @brief Get total ray pass count for discrete cell coordinates.
+   */
+  [[nodiscard]] inline uint32_t get_passes(int cell_x, int cell_y) const noexcept
+  {
+    int block_x, block_y, local_x, local_y;
+    cell_to_block(cell_x, cell_y, block_x, block_y, local_x, local_y);
+    const auto it = blocks_.find(pack_key(block_x, block_y));
+    if (it == blocks_.end()) {
+      return 0;
+    }
+    return it->second->get_passes(local_x, local_y);
+  }
+
+  /**
+   * @brief Get total obstacle hit count for discrete cell coordinates.
+   */
+  [[nodiscard]] inline uint32_t get_hits(int cell_x, int cell_y) const noexcept
+  {
+    int block_x, block_y, local_x, local_y;
+    cell_to_block(cell_x, cell_y, block_x, block_y, local_x, local_y);
+    const auto it = blocks_.find(pack_key(block_x, block_y));
+    if (it == blocks_.end()) {
+      return 0;
+    }
+    return it->second->get_hits(local_x, local_y);
+  }
+
+  /**
+   * @brief Record a laser ray passing through discrete cell coordinates.
+   */
+  inline void record_pass(int cell_x, int cell_y)
+  {
+    int block_x, block_y, local_x, local_y;
+    cell_to_block(cell_x, cell_y, block_x, block_y, local_x, local_y);
+    const uint64_t key = pack_key(block_x, block_y);
+
+    auto it = blocks_.find(key);
+    if (it == blocks_.end()) {
+      auto new_block = std::make_unique<BlockType>(default_value_);
+      new_block->record_pass(local_x, local_y, min_pass_through_, occupancy_threshold_);
+      blocks_.emplace(key, std::move(new_block));
+    } else {
+      it->second->record_pass(local_x, local_y, min_pass_through_, occupancy_threshold_);
+    }
+
+    update_bounds(cell_x, cell_y);
+  }
+
+  /**
+   * @brief Record a laser obstacle hit at discrete cell coordinates.
+   */
+  inline void record_hit(int cell_x, int cell_y)
+  {
+    int block_x, block_y, local_x, local_y;
+    cell_to_block(cell_x, cell_y, block_x, block_y, local_x, local_y);
+    const uint64_t key = pack_key(block_x, block_y);
+
+    auto it = blocks_.find(key);
+    if (it == blocks_.end()) {
+      auto new_block = std::make_unique<BlockType>(default_value_);
+      new_block->record_hit(local_x, local_y, min_pass_through_, occupancy_threshold_);
+      blocks_.emplace(key, std::move(new_block));
+    } else {
+      it->second->record_hit(local_x, local_y, min_pass_through_, occupancy_threshold_);
+    }
+
+    update_bounds(cell_x, cell_y);
+  }
+
+  /**
+   * @brief Update occupancy states across all active blocks and cells.
+   */
+  void update_all_occupancy()
+  {
+    for (auto & [key, block] : blocks_) {
+      block->update_all_occupancy(min_pass_through_, occupancy_threshold_);
+    }
   }
 
   /**
@@ -695,6 +817,8 @@ private:
   double origin_x_{0.0};
   double origin_y_{0.0};
   uint8_t default_value_{0};
+  uint32_t min_pass_through_{2};
+  double occupancy_threshold_{0.1};
 
   int min_cell_x_{std::numeric_limits<int>::max()};
   int min_cell_y_{std::numeric_limits<int>::max()};

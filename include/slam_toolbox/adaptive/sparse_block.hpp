@@ -23,6 +23,7 @@
 #include <array>
 #include <cstdint>
 #include <cstring>
+#include <limits>
 
 namespace slam_toolbox
 {
@@ -30,12 +31,16 @@ namespace adaptive
 {
 
 /**
- * @brief Fixed-size cache-aligned tile storing a contiguous local 2D grid of occupancy cells.
+ * @brief Fixed-size cache-aligned tile storing a contiguous local 2D grid of occupancy cells
+ * with Karto SDK-compliant probabilistic hit and pass counting.
  *
  * Designed to fit cleanly across CPU L1 cache lines (64-byte aligned).
- * Default TileSize = 16 corresponds to a 256-cell tile (exactly 256 bytes = 4 CPU cache lines).
- * Bitwise shifts (>> 4) and bitmasks (& 0x0F) provide sub-nanosecond cell indexing
- * without division or modulo operations.
+ * Default TileSize = 16 corresponds to a 256-cell tile:
+ *  - cells:  256 bytes (4 cache lines, offsets 0..255)
+ *  - passes: 1024 bytes (16 cache lines, offsets 256..1279)
+ *  - hits:   1024 bytes (16 cache lines, offsets 1280..2303)
+ *  - metadata and alignment padding: 64 bytes (1 cache line, offsets 2304..2367)
+ * Total sizeof(SparseBlock<16>) == 2368 bytes (exactly 37 CPU cache lines).
  */
 template<int TileSize = 16>
 struct alignas(64) SparseBlock
@@ -46,6 +51,8 @@ struct alignas(64) SparseBlock
   static constexpr int MASK = TileSize - 1;
 
   std::array<uint8_t, NUM_CELLS> cells;
+  std::array<uint32_t, NUM_CELLS> passes{};
+  std::array<uint32_t, NUM_CELLS> hits{};
   uint32_t non_default_count{0};
   uint32_t lethal_count{0};
   uint8_t default_value{0};
@@ -60,6 +67,8 @@ struct alignas(64) SparseBlock
   : default_value(initial_value)
   {
     cells.fill(initial_value);
+    passes.fill(0);
+    hits.fill(0);
   }
 
   /**
@@ -143,12 +152,114 @@ struct alignas(64) SparseBlock
   }
 
   /**
-   * @brief Fill entire block with a uniform cost value.
+   * @brief Get total ray pass count for a cell.
+   * @param local_x Local cell X coordinate within tile.
+   * @param local_y Local cell Y coordinate within tile.
+   */
+  [[nodiscard]] inline uint32_t get_passes(int local_x, int local_y) const noexcept
+  {
+    return passes[(local_y & MASK) * SIZE + (local_x & MASK)];
+  }
+
+  /**
+   * @brief Get total obstacle hit count for a cell.
+   * @param local_x Local cell X coordinate within tile.
+   * @param local_y Local cell Y coordinate within tile.
+   */
+  [[nodiscard]] inline uint32_t get_hits(int local_x, int local_y) const noexcept
+  {
+    return hits[(local_y & MASK) * SIZE + (local_x & MASK)];
+  }
+
+  /**
+   * @brief Re-evaluate cell occupancy based on probabilistic hit ratio (Karto SDK formula).
+   * @param local_x Local cell X coordinate.
+   * @param local_y Local cell Y coordinate.
+   * @param min_pass_through Minimum pass count required before classifying cell.
+   * @param occupancy_threshold Hit ratio threshold above which cell is marked Occupied.
+   */
+  inline void update_cell_occupancy(
+    int local_x, int local_y,
+    uint32_t min_pass_through = 2,
+    double occupancy_threshold = 0.1) noexcept
+  {
+    const int idx = (local_y & MASK) * SIZE + (local_x & MASK);
+    const uint32_t pass_cnt = passes[idx];
+    if (pass_cnt > min_pass_through) {
+      const uint32_t hit_cnt = hits[idx];
+      const double hit_ratio = static_cast<double>(hit_cnt) / static_cast<double>(pass_cnt);
+      const uint8_t new_cost = (hit_ratio > occupancy_threshold) ? 254 : 0;
+      set(local_x, local_y, new_cost);
+    }
+  }
+
+  /**
+   * @brief Update occupancy for all cells within this tile.
+   * @param min_pass_through Minimum pass count required before classifying cell.
+   * @param occupancy_threshold Hit ratio threshold above which cell is marked Occupied.
+   */
+  inline void update_all_occupancy(
+    uint32_t min_pass_through = 2,
+    double occupancy_threshold = 0.1) noexcept
+  {
+    for (int ly = 0; ly < SIZE; ++ly) {
+      for (int lx = 0; lx < SIZE; ++lx) {
+        update_cell_occupancy(lx, ly, min_pass_through, occupancy_threshold);
+      }
+    }
+  }
+
+  /**
+   * @brief Record a laser ray passing through this cell and update occupancy.
+   * @param local_x Local cell X coordinate.
+   * @param local_y Local cell Y coordinate.
+   * @param min_pass_through Minimum pass count required before classifying cell.
+   * @param occupancy_threshold Hit ratio threshold above which cell is marked Occupied.
+   */
+  inline void record_pass(
+    int local_x, int local_y,
+    uint32_t min_pass_through = 2,
+    double occupancy_threshold = 0.1) noexcept
+  {
+    const int idx = (local_y & MASK) * SIZE + (local_x & MASK);
+    if (passes[idx] < std::numeric_limits<uint32_t>::max()) {
+      ++passes[idx];
+    }
+    update_cell_occupancy(local_x, local_y, min_pass_through, occupancy_threshold);
+  }
+
+  /**
+   * @brief Record a laser obstacle hit at this cell and update occupancy.
+   * @param local_x Local cell X coordinate.
+   * @param local_y Local cell Y coordinate.
+   * @param min_pass_through Minimum pass count required before classifying cell.
+   * @param occupancy_threshold Hit ratio threshold above which cell is marked Occupied.
+   */
+  inline void record_hit(
+    int local_x, int local_y,
+    uint32_t min_pass_through = 2,
+    double occupancy_threshold = 0.1) noexcept
+  {
+    const int idx = (local_y & MASK) * SIZE + (local_x & MASK);
+    if (passes[idx] < std::numeric_limits<uint32_t>::max()) {
+      ++passes[idx];
+    }
+    if (hits[idx] < std::numeric_limits<uint32_t>::max()) {
+      ++hits[idx];
+    }
+    touch(0.0, true);
+    update_cell_occupancy(local_x, local_y, min_pass_through, occupancy_threshold);
+  }
+
+  /**
+   * @brief Fill entire block with a uniform cost value and reset probabilistic counters.
    * @param fill_value Cost value to populate across all cells.
    */
   inline void fill(uint8_t fill_value) noexcept
   {
     cells.fill(fill_value);
+    passes.fill(0);
+    hits.fill(0);
     non_default_count = (fill_value == default_value) ? 0 : NUM_CELLS;
     lethal_count = (fill_value == 254) ? NUM_CELLS : 0;
   }
@@ -185,6 +296,13 @@ struct alignas(64) SparseBlock
     return sizeof(SparseBlock<TileSize>);
   }
 };
+
+static_assert(
+  sizeof(SparseBlock<16>) == 2368,
+  "SparseBlock<16> must be exactly 2368 bytes (37 cache lines)");
+static_assert(
+  alignof(SparseBlock<16>) == 64,
+  "SparseBlock<16> must be 64-byte aligned");
 
 }  // namespace adaptive
 }  // namespace slam_toolbox
